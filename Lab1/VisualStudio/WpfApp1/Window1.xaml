@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Add Custom Researcher" Height="300" Width="350" Background="Azure" WindowStartupLocation="CenterOwner">
+    <Grid >
+        <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,31,0,0" Height="33" Width="58" FontSize="16"/>
+        <TextBox Name ="TextBoxName" Background="Lavender" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="117,38,0,0" Text="{Binding Path=Name[0], Mode=OneWayToSource}"/>
+        <TextBox Name ="TextBoxLastName" Background="Lavender" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="117,75,0,0" Text="{Binding Path=Name[1], Mode=OneWayToSource}" />
+        <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,68,0,0" Height="33" Width="88" FontSize="16"/>
+        <Label Content="Birth Date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,104,0,0" Height="33" Width="85" FontSize="16"/>
+        <DatePicker  Name="DatePick" Background="Lavender" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="117,110,0,0" Width="185" Text="{Binding Path=Date, Mode=OneWayToSource}"/>
+        <ComboBox Name ="CBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="185" Margin="117,151,0,0" Text="{Binding Path=Topic, Mode=OneWayToSource}"/>
+        <Label Content="Topic:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,143,0,0" Height="33" Width="53" FontSize="16" />
+        <Label Content="Number of&#xD;&#xA;publications:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,179,0,0" Height="70" Width="107" FontSize="16" />
+        <TextBox Name="Num" Background="Lavender" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="117,192,0,0" Text="{Binding Path=num, Mode=OneWayToSource}"/>
+        <Button Name="AddButton" Background="#FF94D9D9" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="119,232,0,0" Height="27" Click="AddButton_Click"/>
+
+    </Grid>
+</Window>

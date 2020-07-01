@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace Lab2
+{
+    /// <summary>
+    /// Логика взаимодействия для Window1.xaml
+    /// </summary>
+    public partial class Window1 : Window
+    {
+        public Window1()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string errors = "";
+            foreach (FrameworkElement child in main_grid.Children)
+                if (Validation.GetHasError(child) == true)
+                {
+                    foreach (var item in Validation.GetErrors(child))
+                        errors += "Error: " + item.ErrorContent.ToString() + "\n";
+                }
+            if(errors=="")
+                this.DialogResult = true;
+            else
+                MessageBox.Show(errors, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+        }
+    }
+}
